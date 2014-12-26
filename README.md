@@ -1,4 +1,4 @@
-moa_v1
+moa
 ======
 该程序基于angurlar.js开发自定义指令
 moaDriective
