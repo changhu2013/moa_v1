@@ -2,9 +2,10 @@
 <html ng-app="moa">
 <head>
     <title>MOA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
@@ -22,11 +23,15 @@
     <div class="col">
         <div class="col-md-6">
             <moa-grid dataurl="/users" limit="12" class="panel-danger" title="物料信息"
-                      cols="name" paging="more"></moa-grid>
+                      cols="name" paging="more">
+
+            </moa-grid>
         </div>
+
         <div class="col-md-6">
             <moa-grid dataurl="/users" limit="12" class="panel-primary"
                       headers="编码,名称" cols="code,name" link="">
+
             </moa-grid>
         </div>
     </div>

@@ -3,6 +3,7 @@
  */
 angular.module('moaDirective', [])
     .controller('moaGridController', ['$scope', '$http', function($scope, $http){
+
         $scope.data = [];
 
         var loadCallback = function(data){
@@ -36,7 +37,7 @@ angular.module('moaDirective', [])
     .directive('moaGrid', ['$http', function($http){
         return {
             restrict : 'E',
-            replace : false,
+            replace : true,
             transclude : true,
             templateUrl : '/tpls/moa-grid.tpl.html',
             controller : 'moaGridController',
