@@ -17,11 +17,20 @@
 
     <script src="/moa.js" type="text/javascript"></script>
 </head>
-<body ng-controller="main" class="container-fluid">
+<body ng-controller="main" class="container">
 
-    <moa-grid dataurl="/users" limit="12" class="panel-primary" title="用户信息" link=""></moa-grid>
+    <div class="col">
+        <div class="col-sm-6">
+            <moa-grid dataurl="/users" limit="12" class="panel-danger" title="物料信息"
+                      cols="name" paging="more"></moa-grid>
+        </div>
+        <div class="col-sm-6">
+            <moa-grid dataurl="/users" limit="12" class="panel-primary"
+                      headers="编码,名称" cols="code,name" link="">
+            </moa-grid>
+        </div>
+    </div>
 
-    <moa-grid dataurl="/users" limit="12" class="panel-danger" title="物料信息"></moa-grid>
 
 </body>
 
