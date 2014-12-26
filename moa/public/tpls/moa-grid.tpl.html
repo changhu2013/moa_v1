@@ -1,0 +1,22 @@
+<div class="panel {{clazz}}">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+        <table class="table">
+            <tr ng-repeat="user in data">
+                <td style="width:100px;"><span> {{user.code}} </span></td>
+                <td style="width:100px;"><span> {{user.name}} </span></td>
+            </tr>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

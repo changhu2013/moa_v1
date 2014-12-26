@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="moa">
+<head>
+    <title>MOA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    <link rel="stylesheet" href="/bootstrap-3.2.0/css/bootstrap.min.css">
+    <script src="/javascripts/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="/bootstrap-3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="/javascripts/angular-1.2.9/angular.js" type="text/javascript"></script>
+    <script src="/javascripts/angular-1.2.9/angular-route.js" type="text/javascript"></script>
+
+    <script src="/moa.js" type="text/javascript"></script>
+</head>
+<body ng-controller="main" class="container-fluid">
+
+    <moa-grid dataurl="/users" limit="12" class="panel-primary" title="用户信息" link=""></moa-grid>
+
+    <moa-grid dataurl="/users" limit="12" class="panel-danger" title="物料信息"></moa-grid>
+
+</body>
+
+<script type="text/javascript">
+    angular.module('moa', ['moaDirective'])
+            .controller('main', function ($scope) {
+
+            });
+
+</script>
+
+</html>
