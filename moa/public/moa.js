@@ -33,6 +33,22 @@ angular.module('moaDirective', [])
             }).success(loadCallback);
         };
 
+        $scope.generateHref = function(data){
+            var link = $scope.link;
+            if(typeof link == 'string'){
+                var args = link.split('/:');
+                var href = args[0];
+                for(var i = 1, len = args.length;i < len; i++){
+                    var arg = args[i];
+                    if(typeof data[arg] == 'string'){
+                        href += '/' + data[arg];
+                    }else {
+                        href += '/' + arg;
+                    }
+                }
+                return href;
+            }
+        }
     }])
     .directive('moaGrid', ['$http', function($http){
         return {
@@ -52,7 +68,8 @@ angular.module('moaDirective', [])
                     clazz = attributes.class,
                     headers = attributes.headers,
                     cols = attributes.cols,
-                    paging = attributes.paging || 'more';
+                    paging = attributes.paging || 'more',
+                    link = attributes.link;
 
                 headers = typeof headers == 'string' ? headers.split(',') : [];
                 cols = typeof cols == 'string' ? cols.replace(' ', '').split(',') : [];
@@ -68,6 +85,8 @@ angular.module('moaDirective', [])
                         $scope.cols = cols;
                         $scope.paging = paging;
                         $scope.showMoreBtn = false;
+
+                        $scope.link = link;
 
                         $scope.loadData();
                     }

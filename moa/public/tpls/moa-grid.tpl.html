@@ -1,16 +1,19 @@
 <div class="panel {{clazz}}">
-    <div class="panel-heading" ng-show="title != undefined && title != ''" >{{title}}</div>
+    <div class="panel-heading" ng-show="title != undefined && title != ''">{{title}}</div>
     <div class="panel-body">
         <table class="table">
             <tr>
-               <td ng-repeat="header in headers">
-                   <span> {{header}} </span>
-               </td>
-            </tr>
-            <tr ng-repeat="user in data">
-                <td ng-repeat="col in cols">
-                    <span> {{user[col]}}</span>
+                <td ng-repeat="header in headers">
+                    <span> {{header}} </span>
                 </td>
+            </tr>
+            <tr ng-repeat="item in data">
+                <td ng-repeat="col in cols">
+                    <span> {{item[col]}}</span>
+                </td>
+                <td ng-show="link != undefined"><a href="{{generateHref(item)}}">
+                    <div class="glyphicon glyphicon-share-alt"></div>
+                </a></td>
             </tr>
         </table>
         <button class="btn btn-link center-block" ng-click="loadData();" ng-show="showMoreBtn">更多</button>

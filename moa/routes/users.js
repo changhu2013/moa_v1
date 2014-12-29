@@ -4,10 +4,18 @@ var url = require('url');
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-    res.send('respond with a resource');
+    res.render('users');
 });
 
+//显示某用户信息
+router.get('/:code', function(req, res){
 
+    console.log(req.param);
+
+    res.send('Hello ');
+});
+
+//获取用户列表
 router.post('/', function (req, res) {
 
     var query = url.parse(req.url, true).query;
