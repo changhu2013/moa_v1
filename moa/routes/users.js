@@ -9,10 +9,11 @@ router.get('/', function (req, res) {
 
 //显示某用户信息
 router.get('/:code', function(req, res){
-
-    console.log(req.param);
-
-    res.send('Hello ');
+    var code = req.params.code;
+    res.render('user', {
+        code : code,
+        name : '测试数据_' + code
+    });
 });
 
 //获取用户列表
