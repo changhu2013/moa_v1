@@ -2,7 +2,7 @@
  * 自定义指令
  */
 angular.module('moaDirective', [])
-    .controller('moaGridController', ['$scope', '$http', function($scope, $http){
+    .controller('moaTableController', ['$scope', '$http', function($scope, $http){
 
         $scope.data = [];
 
@@ -50,13 +50,13 @@ angular.module('moaDirective', [])
             }
         }
     }])
-    .directive('moaGrid', ['$http', function($http){
+    .directive('moaTable', ['$http', function($http){
         return {
             restrict : 'E',
             replace : true,
             transclude : true,
-            templateUrl : '/tpls/moa-grid.tpl.html',
-            controller : 'moaGridController',
+            templateUrl : '/tpls/moa-table.tpl.html',
+            controller : 'moaTableController',
             scope : true,
             link : function(scope){
 

@@ -1,17 +1,18 @@
 <div class="panel {{clazz}}">
     <div class="panel-heading" ng-show="title != undefined && title != ''">{{title}}</div>
     <div class="panel-body">
-        <table class="table">
+        <table class="table table-striped">
             <tr>
                 <td ng-repeat="header in headers">
-                    <span> {{header}} </span>
+                    <span style="font-weight: bold;"> {{header}} </span>
                 </td>
+                <td ng-show="link != undefined"></td>
             </tr>
             <tr ng-repeat="item in data">
                 <td ng-repeat="col in cols">
                     <span> {{item[col]}}</span>
                 </td>
-                <td ng-show="link != undefined"><a href="{{generateHref(item)}}">
+                <td ng-show="link != undefined" class="text-right"><a href="{{generateHref(item)}}">
                     <div class="glyphicon glyphicon-share-alt"></div>
                 </a></td>
             </tr>
