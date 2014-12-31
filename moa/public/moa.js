@@ -94,61 +94,13 @@ angular.module('moaDirective', [])
             }
         };
     }])
-    .controller('moaMedialistController', ['$scope', '$http', function($scope, $http){
-
-        $scope.data = [];
-
-        var loadCallback = function(data){
-            if(data instanceof Array){
-                $scope.skip = $scope.skip + data.length;
-                $scope.data = $scope.data.concat(data);
-                if($scope.paging == 'more'){
-                    if(data.length < $scope.limit){
-                        $scope.showMoreBtn = false;
-                    }else {
-                        $scope.showMoreBtn = true;
-                    }
-                }else {
-                    $scope.showMoreBtn = false;
-                }
-            }
-        };
-
-        $scope.loadData = function(){
-            $http({
-                method : 'POST',
-                url : $scope.dataurl,
-                params : {
-                    skip : $scope.skip,
-                    limit : $scope.limit
-                }
-            }).success(loadCallback);
-        };
-
-        $scope.generateHref = function(data){
-            var link = $scope.link;
-            if(typeof link == 'string'){
-                var args = link.split('/:');
-                var href = args[0];
-                for(var i = 1, len = args.length;i < len; i++){
-                    var arg = args[i];
-                    if(typeof data[arg] == 'string'){
-                        href += '/' + data[arg];
-                    }else {
-                        href += '/' + arg;
-                    }
-                }
-                return href;
-            }
-        }
-    }])
     .directive('moaMedialist', ['$http', function($http){
         return {
             restrict : 'E',
             replace : true,
             transclude : true,
             templateUrl : '/tpls/moa-medialist.tpl.html',
-            controller : 'moaMedialistController',
+            controller : 'moaTableController',
             scope : true,
             link : function(scope){
 
