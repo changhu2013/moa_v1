@@ -12,7 +12,7 @@
                 <td ng-repeat="col in cols">
                     <span> {{item[col]}}</span>
                 </td>
-                <td ng-show="link != undefined" class="text-right"><a href="{{generateHref(item)}}">
+                <td ng-show="link != undefined" class="text-right"><a ng-href="{{generateHref(item)}}">
                     <div class="glyphicon glyphicon-share-alt"></div>
                 </a></td>
             </tr>

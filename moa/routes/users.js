@@ -31,7 +31,13 @@ router.post('/', function (req, res) {
     for (var i = skip; i < skip+limit; i++) {
         users.push({
             code: 'code_' + i,
-            name: 'name_' + i
+            name: '张三_' + i,
+            photo : i % 2 == 1 ? '/images/farmer.jpg' : '/images/game.jpg',
+            desc : '张三是个好同志，张三是个好同志，张三是个好同志'
+            + '张三是个好同志，张三是个好同志，张三是个好同志'
+            + '张三是个好同志，张三是个好同志，张三是个好同志'
+            + '张三是个好同志，张三是个好同志，张三是个好同志'
+            + '张三是个好同志，张三是个好同志，张三是个好同志'
         });
     }
 

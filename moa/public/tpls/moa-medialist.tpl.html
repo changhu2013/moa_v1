@@ -1,0 +1,21 @@
+<div class="panel {{clazz}}">
+    <div class="panel-heading" ng-show="title != undefined && title != ''">{{title}}</div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <tr ng-repeat="item in data">
+                <td class="media">
+                    <a class="pull-left" ng-href="{{generateHref(item)}}">
+                        <img style="width:80px;" class="img img-rounded img-responsive media-object" ng-src="{{item[mediaobject]}}"/>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{item[mediaheading]}}</h4>
+                        <div class="media">
+                            <small>{{item[mediabody]}}</small>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-link center-block" ng-click="loadData();" ng-show="showMoreBtn">更多</button>
+    </div>
+</div>

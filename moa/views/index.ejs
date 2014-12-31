@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <link rel="stylesheet" href="/bootstrap-3.2.0/css/bootstrap.min.css">
+
     <script src="/javascripts/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="/bootstrap-3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -31,22 +32,16 @@
 
 </head>
 <body ng-controller="main">
+<div class="container">
+    <ol>
+        <li><a href="/users">普通表格</a></li>
+        <li><a href="/users">表单</a></li>
+    </ol>
+</div>
 
-    <ul class="nav nav-pills">
-        <li class="active"><a href="/users">普通列表</a></li>
-        <li><a href="/users">表单</a></li>
-        <li><a href="/users">表单</a></li>
-        <li><a href="/users">表单</a></li>
-        <li><a href="/users">表单</a></li>
-        <li><a href="/users">表单</a></li>
-    </ul>
-
-
-<moa-table dataurl="/users" limit="10" class="panel-primary" title="物料信息"
-          headers="编码,名称" cols="code,name" link="/users/:code">
-</moa-table>
-
-<blockquote></blockquote>
+<moa-medialist dataurl="/users" limit="10" class="" title=""
+               mediaobject="photo" mediaheading="name" mediabody="desc" link="/users/:code">
+</moa-medialist>
 
 </body>
 <script type="text/javascript">
