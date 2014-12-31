@@ -33,8 +33,12 @@
 
     <div style="margin-top:20px;">
 
-        <moa-medialist dataurl="/users" limit="10" class="panel-primary" title="通讯录"
+        <moa-medialist dataurl="/users" limit="10" class="panel-primary" title="新闻列表"
                mediaobject="photo" mediaheading="name" mediabody="desc" link="/users/:code">
+        </moa-medialist>
+
+        <moa-medialist dataurl="/users" limit="10"
+                       mediaobject="photo" mediaheading="name" mediabody="desc" link="/users/:code">
         </moa-medialist>
 
     </div>
