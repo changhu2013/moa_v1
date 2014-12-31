@@ -22,11 +22,6 @@ moaDriective
 
 > * link     数据链接，可不写，eg: '/user/:code' 点击数据行页面跳转到 /user/:code 其中:code为所在行的数据的属性code值
 
-<pre><code>
-<moa-table dataurl="/users" limit="10" class="panel-primary" title="物料信息"
-    headers="编码,名称" cols="code,name" link="/users/:code">
-</moa-table>
-</code></pre>
 
 
 
