@@ -4,13 +4,19 @@
         <table class="table table-striped table-hover">
             <tr ng-repeat="item in data">
                 <td class="media">
-                    <a class="pull-left" ng-href="{{generateHref(item)}}">
-                        <img style="width:80px;" class="img img-rounded img-responsive media-object" ng-src="{{item[mediaobject]}}"/>
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{item[mediaheading]}}</h4>
-                        <div class="media">
-                            <small>{{item[mediabody]}}</small>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2">
+                            <a class="pull-left" ng-href="{{generateHref(item)}}">
+                                <img class="img img-rounded img-responsive media-object" ng-src="{{item[mediaobject]}}"/>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-10">
+                            <div class="media-body">
+                                <strong class="media-heading">{{item[mediaheading]}}</strong>
+                                <div class="media">
+                                    <small>{{item[mediabody]}}</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </td>
