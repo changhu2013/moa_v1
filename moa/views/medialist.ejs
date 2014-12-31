@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <link rel="stylesheet" href="/bootstrap-3.2.0/css/bootstrap.min.css">
+
     <script src="/javascripts/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="/bootstrap-3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -17,29 +18,28 @@
     <script src="/javascripts/angular-1.2.9/angular-route.js" type="text/javascript"></script>
 
     <script src="/moa.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        body {
+            /* 可用于整体的页面的字体、大小、颜色设置 */
+            /*font-family: "楷体", "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif; */
+            font-size: 20px;
+            /*color : blue;*/
+        }
+    </style>
+
 </head>
 <body ng-controller="main" class="container">
 
-    <div class="col" style="margin-top:20px;">
+    <div style="margin-top:20px;">
 
-        <div class="col-md-6">
-            <moa-table dataurl="/users" limit="10" class="panel-primary" title="物料信息"
-                      headers="编码,名称" cols="code,name" link="/users/:code">
-            </moa-table>
-
-        </div>
+        <moa-medialist dataurl="/users" limit="10" class="panel-primary" title="通讯录"
+               mediaobject="photo" mediaheading="name" mediabody="desc" link="/users/:code">
+        </moa-medialist>
 
     </div>
-
 </body>
-
 <script type="text/javascript">
-
-    angular.module('moa', ['moaDirective'])
-            .controller('main', function ($scope) {
-
-            });
-
+    angular.module('moa', ['moaDirective']).controller('main', function ($scope) {});
 </script>
-
 </html>

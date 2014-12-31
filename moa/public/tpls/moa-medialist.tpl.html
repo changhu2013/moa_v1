@@ -5,12 +5,12 @@
             <tr ng-repeat="item in data">
                 <td class="media">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-2">
+                        <div class="col-xs-12 col-sm-3 col-md-2">
                             <a class="pull-left" ng-href="{{generateHref(item)}}">
                                 <img class="img img-rounded img-responsive media-object" ng-src="{{item[mediaobject]}}"/>
                             </a>
                         </div>
-                        <div class="col-xs-12 col-sm-10">
+                        <div class="col-xs-12 col-sm-9 col-md-10">
                             <div class="media-body">
                                 <strong class="media-heading">{{item[mediaheading]}}</strong>
                                 <div class="media">
@@ -22,6 +22,6 @@
                 </td>
             </tr>
         </table>
-        <button class="btn btn-link center-block" ng-click="loadData();" ng-show="showMoreBtn">更多</button>
+        <a class="btn btn-link center-block" ng-click="loadData();" ng-show="showMoreBtn">更多</a>
     </div>
 </div>
