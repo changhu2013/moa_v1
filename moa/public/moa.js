@@ -116,9 +116,6 @@ angular.module('moaDirective', [])
                     paging = attributes.paging || 'more',
                     link = attributes.link;
 
-                headers = typeof headers == 'string' ? headers.split(',') : [];
-                cols = typeof cols == 'string' ? cols.replace(' ', '').split(',') : [];
-
                 return {
                     pre : function ($scope, iElement) {
                         $scope.title = title;
@@ -138,5 +135,58 @@ angular.module('moaDirective', [])
                 }
             }
         };
-    }]);
+    }])
+    .controller('moaTableController', ['$scope', '$http', function($scope, $http){
+
+        $scope.root = {
+            id : 'root'
+        };
+
+        var loadNodes = function(node){
+            $http({
+                method : 'POST',
+                url : $scope.dataurl,
+                params : {
+                    pid : node.id
+                }
+            }).success(function(nodes){
+                node.nodes = nodes;
+            });
+        };
+
+        $scope.expandNode = function(node, element){
+
+            loadNodes(node);
+        };
+
+    }])
+    .directive('moaTree', function(){
+
+        return {
+            restrict : 'E',
+            replace : true,
+            transclude : true,
+            templateUrl : '/tpls/moa-tree.tpl.html',
+            controller : 'moaTableController',
+            scope : true,
+            compile : function(element, attributes){
+                var dataurl = attributes.dataurl,
+                    title = attributes.title,
+                    clazz = attributes.class,
+                    link = attributes.link;
+
+                return {
+                    pre : function ($scope, iElement) {
+                        $scope.title = title;
+                        $scope.dataurl = dataurl;
+                        $scope.clazz = clazz;
+                        $scope.link = link;
+
+                        $scope.expandNode($scope.root);
+                    }
+                }
+            }
+        };
+
+    });
 
