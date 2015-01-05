@@ -14,4 +14,8 @@ router.get('/medialist', function(req, res){
   res.render('medialist');
 });
 
+router.get('/tree', function(req, res){
+  res.render('tree');
+});
+
 module.exports = router;

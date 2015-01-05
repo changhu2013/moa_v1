@@ -52,42 +52,19 @@ router.post('/', function (req, res) {
 
 //获取用户信息
 router.post('/dept', function(req, res){
+    var query = url.parse(req.url, true).query;
+    console.log(query);
+    var pid = query.pid;
 
-    var tree = [
-        {
-            text: "Parent 1",
-            nodes: [
-                {
-                    text: "Child 1",
-                    nodes: [
-                        {
-                            text: "Grandchild 1"
-                        },
-                        {
-                            text: "Grandchild 2"
-                        }
-                    ]
-                },
-                {
-                    text: "Child 2"
-                }
-            ]
-        },
-        {
-            text: "Parent 2"
-        },
-        {
-            text: "Parent 3"
-        },
-        {
-            text: "Parent 4"
-        },
-        {
-            text: "Parent 5"
-        }
-    ];
-
-    res.send(tree);
+    var nodes = [];
+    for(var i = 0 ; i < 6; i++){
+        nodes.push({
+            id : pid + ' ' + i,
+            text : 'node_' + pid + ' ' + i,
+            leaf : i > 4
+        });
+    }
+    res.send(nodes);
 })
 
 module.exports = router;

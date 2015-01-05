@@ -23,7 +23,7 @@
         body {
             /* 可用于整体的页面的字体、大小、颜色设置 */
             /*font-family: "楷体", "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif; */
-            /*font-size: 20px;*/
+            font-size: 20px;
             /*color : blue;*/
         }
     </style>
@@ -31,13 +31,14 @@
 </head>
 <body ng-controller="main">
 
-<div class="container">
-    <ol>
-        <li><a href="/table">moa-table</a></li>
-        <li><a href="/medialist">moa-medialist</a></li>
-        <li><a href="/tree">moa-tree</a></li>
-    </ol>
-</div>
+<moa-tree dataurl="/users/dept" title="Hello Mr. Tree"></moa-tree>
+
+<moa-tree dataurl="/users/dept" title="Hello Tree" class="panel-primary" link="/users/:id"
+          nodeicon="glyphicon glyphicon-th-list" expandicon="glyphicon glyphicon-folder-close" collapseicon="glyphicon glyphicon-folder-open">
+</moa-tree>
+
+<moa-tree dataurl="/users/dept"></moa-tree>
+
 
 </body>
 <script type="text/javascript">
