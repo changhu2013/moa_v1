@@ -68,6 +68,8 @@ moaDriective
 
 >>  id : 节点id， 必须有，且唯一，展开节点时，向后台发送参数 pid，其值为节点id
 
+>>  text :  节点名称, 这得有
+
 >>  leaf : 是否是叶子节点，boolean
 
 >>  children : 子节点数组
