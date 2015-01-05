@@ -22,7 +22,7 @@ moaDriective
 
 > * link     数据链接，可不写，eg: '/user/:code' 点击数据行页面跳转到 /user/:code 其中:code为所在行的数据的属性code值
 
-
+> ![alt text](/moa/public/images/table.png "moa-table")
 
 #### moaMedialist
 > 配置参数
@@ -45,6 +45,7 @@ moaDriective
 
 > * link     数据链接，可不写，eg: '/user/:code' 点击数据行页面跳转到 /user/:code 其中:code为所在行的数据的属性code值
 
+> ![alt text](/moa/public/images/medialist.png "moa-medialist")
 
 #### moaTree
 
@@ -74,4 +75,5 @@ moaDriective
 
 >>  children : 子节点数组
 
+> ![alt text](/moa/public/images/tree.png "moa-tree")
 
