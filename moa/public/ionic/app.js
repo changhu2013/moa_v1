@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl){
     //alert(newUrl + ' : ' + oldUrl);
      if(newUrl == oldUrl){
-        $location.path("/tab/dash");
+        $location.url("/tab/dash");
      }
   });
 })
