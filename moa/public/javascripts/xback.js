@@ -17,7 +17,7 @@
     }
 
     var record = function(state){
-        //history.pushState(state, null, location.href);
+        history.pushState(state, null, location.href);
     }
 
     var fire = function(){
