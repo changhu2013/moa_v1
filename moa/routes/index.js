@@ -18,4 +18,11 @@ router.get('/tree', function(req, res){
   res.render('tree');
 });
 
+
+
+
+router.get('/ionic', function(req, res){
+  res.render('ionic');
+});
+
 module.exports = router;
